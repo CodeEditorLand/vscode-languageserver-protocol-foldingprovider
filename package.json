@@ -14,12 +14,12 @@
     "typings": "./lib/protocol.foldingProvider",
     "main": "./lib/protocol.foldingProvider.js",
     "dependencies": {
-        "vscode-languageserver-types": "^3.7.2",
-        "vscode-languageserver-protocol": "^3.7.2"
+        "vscode-languageserver-types": "3.7.2",
+        "vscode-languageserver-protocol": "3.7.2"
     },
     "devDependencies": {
-        "typescript": "^2.8.3",
-        "@types/node": "^6.0.88"
+        "typescript": "2.8.3",
+        "@types/node": "6.0.88"
     },
     "scripts": {
         "prepublishOnly": "npm run compile",
