@@ -19,7 +19,7 @@
     },
     "devDependencies": {
         "typescript": "5.4.2",
-        "@types/node": "20.11.28"
+        "@types/node": "20.11.30"
     },
     "scripts": {
         "prepublishOnly": "npm run compile",
