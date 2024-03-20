@@ -1,30 +1,41 @@
 {
-    "name": "vscode-languageserver-protocol-foldingprovider",
-    "version": "2.0.1",
-    "description": "Folding Provider Extension to the VSCode Language Server Protocol (Proposed)",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Microsoft/vscode-languageserver-protocol-foldingprovider.git"
-    },
-    "author": "Microsoft Corporation",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Microsoft/vscode-languageserver-protocol-foldingprovider/issues"
-    },
-    "typings": "./lib/protocol.foldingProvider",
-    "main": "./lib/protocol.foldingProvider.js",
-    "dependencies": {
-        "vscode-languageserver-types": "3.17.5",
-        "vscode-languageserver-protocol": "3.17.5"
-    },
-    "devDependencies": {
-        "typescript": "5.4.2",
-        "@types/node": "20.11.30"
-    },
-    "scripts": {
-        "prepublishOnly": "npm run compile",
-        "compile": "tsc -p .",
-        "preversion": "npm run compile",
-        "postversion": "git push && git push --tags"
-    }
+	"name": "vscode-languageserver-protocol-foldingprovider",
+	"version": "0.0.1",
+	"private": false,
+	"description": "Folding Provider Extension to the VSCode Language Server Protocol (Proposed)",
+	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
+	"bugs": {
+		"url": "https://github.com/CodeEditorLand/Foundation/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Playform",
+		"email": "Hello@Playform.Cloud",
+		"url": "https://playform.cloud"
+	},
+	"type": "module",
+	"main": "./lib/protocol.foldingProvider.js",
+	"typings": "./lib/protocol.foldingProvider",
+	"scripts": {
+		"compile": "tsc -p .",
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
+		"preversion": "npm run compile",
+		"postversion": "git push && git push --tags"
+	},
+	"dependencies": {
+		"vscode-languageserver-protocol": "3.17.5",
+		"vscode-languageserver-types": "3.17.5"
+	},
+	"devDependencies": {
+		"@types/node": "20.11.30",
+		"typescript": "5.4.2",
+		"typescript-esbuild": "latest"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }
