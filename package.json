@@ -1,41 +1,22 @@
 {
-	"name": "vscode-languageserver-protocol-foldingprovider",
-	"version": "0.0.1",
-	"private": false,
-	"description": "Folding Provider Extension to the VSCode Language Server Protocol (Proposed)",
-	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
-	"bugs": {
-		"url": "https://github.com/CodeEditorLand/Foundation/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
-	},
-	"license": "SEE LICENSE IN LICENSE",
-	"author": {
-		"name": "Playform",
-		"email": "Hello@Playform.Cloud",
-		"url": "https://playform.cloud"
-	},
-	"type": "module",
-	"main": "./lib/protocol.foldingProvider.js",
-	"typings": "./lib/protocol.foldingProvider",
-	"scripts": {
-		"compile": "tsc -p .",
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
-		"preversion": "npm run compile",
-		"postversion": "git push && git push --tags"
-	},
 	"dependencies": {
 		"vscode-languageserver-protocol": "3.17.5",
 		"vscode-languageserver-types": "3.17.5"
 	},
+	"description": "Folding Provider Extension to the VSCode Language Server Protocol (Proposed)",
 	"devDependencies": {
 		"@types/node": "20.11.30",
 		"typescript": "5.4.2",
 		"typescript-esbuild": "0.4.5"
 	},
-	"publishConfig": {
-		"access": "public"
-	}
+	"main": "./lib/protocol.foldingProvider.js",
+	"name": "vscode-languageserver-protocol-foldingprovider",
+	"scripts": {
+		"compile": "tsc -p .",
+		"postversion": "git push && git push --tags",
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'",
+		"preversion": "npm run compile"
+	},
+	"type": "module",
+	"typings": "./lib/protocol.foldingProvider"
 }
