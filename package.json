@@ -1,42 +1,42 @@
 {
-	"name": "vscode-languageserver-protocol-foldingprovider",
-	"version": "0.0.1",
-	"private": false,
-	"description": "Folding Provider Extension to the VSCode Language Server Protocol (Proposed)",
-	"keywords": [
-		"land"
-	],
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandLanguageServerProtocolFoldingprovider#readme",
+	"author": {
+		"email": "Land@PlayForm.Cloud",
+		"name": "🌆 — Land —",
+		"url": "HTTPS://Land.PlayForm.Cloud"
+	},
 	"bugs": {
 		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandLanguageServerProtocolFoldingprovider/issues"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/LandLanguageServerProtocolFoldingprovider.git"
-	},
-	"license": "SEE LICENSE IN LICENSE",
-	"author": {
-		"name": "🌆 — Land —",
-		"email": "Land@PlayForm.Cloud",
-		"url": "HTTPS://Land.PlayForm.Cloud"
-	},
-	"type": "module",
-	"main": "./lib/protocol.foldingProvider.js",
-	"typings": "./lib/protocol.foldingProvider",
-	"scripts": {
-		"Document": "Document 'Source/**/*.ts'",
-		"compile": "tsc -p .",
-		"prepublishOnly": "Build 'Source/**/*.ts'",
-		"preversion": "npm run compile",
-		"postversion": "git push && git push --tags"
-	},
 	"dependencies": {},
+	"description": "Folding Provider Extension to the VSCode Language Server Protocol (Proposed)",
 	"devDependencies": {
 		"@playform/build": "0.0.7",
 		"@playform/document": "0.0.6",
 		"@types/node": "20.12.7"
 	},
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandLanguageServerProtocolFoldingprovider#readme",
+	"keywords": [
+		"land"
+	],
+	"license": "SEE LICENSE IN LICENSE",
+	"main": "./lib/protocol.foldingProvider.js",
+	"name": "vscode-languageserver-protocol-foldingprovider",
+	"private": false,
 	"publishConfig": {
 		"access": "public"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+HTTPS://github.com/CodeEditorLand/LandLanguageServerProtocolFoldingprovider.git"
+	},
+	"scripts": {
+		"Document": "Document 'Source/**/*.ts'",
+		"compile": "tsc -p .",
+		"postversion": "git push && git push --tags",
+		"prepublishOnly": "Build 'Source/**/*.ts'",
+		"preversion": "npm run compile"
+	},
+	"type": "module",
+	"typings": "./lib/protocol.foldingProvider",
+	"version": "0.0.1"
 }
