@@ -1,33 +1,13 @@
-#### Folding Range Request
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
 
-The folding range request is sent from the client to the server to return all folding ranges found in a given text document.
+import { TextDocumentIdentifier } from 'vscode-languageserver-types';
+import { RequestType, TextDocumentRegistrationOptions, StaticRegistrationOptions } from 'vscode-languageserver-protocol';
 
+// ---- capabilities
 
-_Server Capability_:
-
-The server sets the following server capability if it is able to handle `textDocument/foldingRanges` requests:
-
-```ts
-/**
- * The server capabilities
- */
-export interface FoldingRangeServerCapabilities {
-	/**
-	 * The server provides folding provider support.
-	 */
-	foldingRangeProvider?: boolean | FoldingRangeProviderOptions | (FoldingRangeProviderOptions & TextDocumentRegistrationOptions & StaticRegistrationOptions);
-}
-
-export interface FoldingRangeProviderOptions {
-}
-```
-
-
-_Client Capability_:
-
-The client sets the following client capability if it is able to support foldingRangeProviders.
-
-```ts
 export interface FoldingRangeClientCapabilities {
 	/**
 	 * The text document client capabilities
@@ -56,26 +36,16 @@ export interface FoldingRangeClientCapabilities {
 		};
 	};
 }
-```
 
-_Request_:
-
-* method: 'textDocument/foldingRanges'
-* params: `FoldingRangeRequestParam` defined as follows
-
-```ts
-export interface FoldingRangeRequestParam {
-	/**
-	 * The text document.
-	 */
-	textDocument: TextDocumentIdentifier;
+export interface FoldingRangeProviderOptions {
 }
 
-```
-
-_Response_:
-* result: `FoldingRange[] | null` defined as follows:
-```ts
+export interface FoldingRangeServerCapabilities {
+	/**
+	 * The server provides folding provider support.
+	 */
+	foldingRangeProvider?: boolean | FoldingRangeProviderOptions | (FoldingRangeProviderOptions & TextDocumentRegistrationOptions & StaticRegistrationOptions);
+}
 
 /**
  * Enum of known range kinds
@@ -127,6 +97,23 @@ export interface FoldingRange {
 	 */
 	kind?: string;
 }
-```
-* error: code and message set in case an exception happens during the 'textDocument/foldingRanges' request
 
+/**
+ * Parameters for a [FoldingRangeRequest](#FoldingRangeRequest).
+ */
+export interface FoldingRangeRequestParam {
+	/**
+	 * The text document.
+	 */
+	textDocument: TextDocumentIdentifier;
+}
+
+/**
+ * A request to provide folding ranges in a document. The request's
+ * parameter is of type [FoldingRangeRequestParam](#FoldingRangeRequestParam), the
+ * response is of type [FoldingRangeList](#FoldingRangeList) or a Thenable
+ * that resolves to such.
+ */
+export namespace FoldingRangeRequest {
+	export const type: RequestType<FoldingRangeRequestParam, FoldingRange[] | null, any, any> = new RequestType('textDocument/foldingRange');
+}
