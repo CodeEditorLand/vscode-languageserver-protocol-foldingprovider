@@ -3,8 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { TextDocumentIdentifier } from 'vscode-languageserver-types';
-import { RequestType, TextDocumentRegistrationOptions, StaticRegistrationOptions } from 'vscode-languageserver-protocol';
+import { TextDocumentIdentifier } from "vscode-languageserver-types";
+import {
+	RequestType,
+	TextDocumentRegistrationOptions,
+	StaticRegistrationOptions,
+} from "vscode-languageserver-protocol";
 
 // ---- capabilities
 
@@ -37,14 +41,18 @@ export interface FoldingRangeClientCapabilities {
 	};
 }
 
-export interface FoldingRangeProviderOptions {
-}
+export interface FoldingRangeProviderOptions {}
 
 export interface FoldingRangeServerCapabilities {
 	/**
 	 * The server provides folding provider support.
 	 */
-	foldingRangeProvider?: boolean | FoldingRangeProviderOptions | (FoldingRangeProviderOptions & TextDocumentRegistrationOptions & StaticRegistrationOptions);
+	foldingRangeProvider?:
+		| boolean
+		| FoldingRangeProviderOptions
+		| (FoldingRangeProviderOptions &
+				TextDocumentRegistrationOptions &
+				StaticRegistrationOptions);
 }
 
 /**
@@ -54,22 +62,21 @@ export enum FoldingRangeKind {
 	/**
 	 * Folding range for a comment
 	 */
-	Comment = 'comment',
+	Comment = "comment",
 	/**
 	 * Folding range for a imports or includes
 	 */
-	Imports = 'imports',
+	Imports = "imports",
 	/**
 	 * Folding range for a region (e.g. `#region`)
 	 */
-	Region = 'region'
+	Region = "region",
 }
 
 /**
  * Represents a folding range.
  */
 export interface FoldingRange {
-
 	/**
 	 * The zero-based line number from where the folded range starts.
 	 */
@@ -115,5 +122,10 @@ export interface FoldingRangeRequestParam {
  * that resolves to such.
  */
 export namespace FoldingRangeRequest {
-	export const type: RequestType<FoldingRangeRequestParam, FoldingRange[] | null, any, any> = new RequestType('textDocument/foldingRange');
+	export const type: RequestType<
+		FoldingRangeRequestParam,
+		FoldingRange[] | null,
+		any,
+		any
+	> = new RequestType("textDocument/foldingRange");
 }
