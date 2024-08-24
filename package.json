@@ -1,16 +1,16 @@
 {
-	"dependencies": {},
-	"description": "Folding Provider Extension to the VSCode Language Server Protocol (Proposed)",
-	"devDependencies": {
-		"@types/node": "^6.0.88"
-	},
-	"main": "./lib/protocol.foldingProvider.js",
 	"name": "vscode-languageserver-protocol-foldingprovider",
+	"description": "Folding Provider Extension to the VSCode Language Server Protocol (Proposed)",
+	"main": "./lib/protocol.foldingProvider.js",
+	"typings": "./lib/protocol.foldingProvider",
 	"scripts": {
 		"compile": "tsc -p .",
-		"postversion": "git push && git push --tags",
 		"prepublishOnly": "npm run compile",
-		"preversion": "npm run compile"
+		"preversion": "npm run compile",
+		"postversion": "git push && git push --tags"
 	},
-	"typings": "./lib/protocol.foldingProvider"
+	"dependencies": {},
+	"devDependencies": {
+		"@types/node": "22.4.0"
+	}
 }
