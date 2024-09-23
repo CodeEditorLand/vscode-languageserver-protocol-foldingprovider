@@ -2,7 +2,7 @@
 	"dependencies": {},
 	"description": "Folding Provider Extension to the VSCode Language Server Protocol (Proposed)",
 	"devDependencies": {
-		"@types/node": "^6.0.88"
+		"@types/node": "22.6.0"
 	},
 	"main": "./lib/protocol.foldingProvider.js",
 	"name": "vscode-languageserver-protocol-foldingprovider",
