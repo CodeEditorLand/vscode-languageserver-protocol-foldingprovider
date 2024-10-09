@@ -1,11 +1,12 @@
 #### Folding Range Request
 
-The folding range request is sent from the client to the server to return all folding ranges found in a given text document.
-
+The folding range request is sent from the client to the server to return all
+folding ranges found in a given text document.
 
 _Server Capability_:
 
-The server sets the following server capability if it is able to handle `textDocument/foldingRanges` requests:
+The server sets the following server capability if it is able to handle
+`textDocument/foldingRanges` requests:
 
 ```ts
 /**
@@ -22,10 +23,10 @@ export interface FoldingRangeProviderOptions {
 }
 ```
 
-
 _Client Capability_:
 
-The client sets the following client capability if it is able to support foldingRangeProviders.
+The client sets the following client capability if it is able to support
+foldingRangeProviders.
 
 ```ts
 export interface FoldingRangeClientCapabilities {
@@ -60,8 +61,8 @@ export interface FoldingRangeClientCapabilities {
 
 _Request_:
 
-* method: 'textDocument/foldingRanges'
-* params: `FoldingRangeRequestParam` defined as follows
+-   method: 'textDocument/foldingRanges'
+-   params: `FoldingRangeRequestParam` defined as follows
 
 ```ts
 export interface FoldingRangeRequestParam {
@@ -74,7 +75,9 @@ export interface FoldingRangeRequestParam {
 ```
 
 _Response_:
-* result: `FoldingRange[] | null` defined as follows:
+
+-   result: `FoldingRange[] | null` defined as follows:
+
 ```ts
 
 /**
@@ -128,5 +131,6 @@ export interface FoldingRange {
 	kind?: string;
 }
 ```
-* error: code and message set in case an exception happens during the 'textDocument/foldingRanges' request
 
+-   error: code and message set in case an exception happens during the
+    'textDocument/foldingRanges' request
