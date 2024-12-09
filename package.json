@@ -5,7 +5,7 @@
 		"@types/node": "22.10.1"
 	},
 	"main": "./lib/protocol.foldingProvider.js",
-	"name": "vscode-languageserver-protocol-foldingprovider",
+	"name": "@codeeditorland/languageserver-protocol-foldingprovider",
 	"scripts": {
 		"compile": "tsc -p .",
 		"postversion": "git push && git push --tags",
